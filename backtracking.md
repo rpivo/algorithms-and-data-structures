@@ -7,6 +7,11 @@ In **backtacking**, we search for a solution by traversing a graph. If we reach 
 ### TypeScript
 
 ```ts
+type Node = {
+  value: number | string | null;
+  children: Node[] | null;
+};
+
 const backtrack = (node: Node, goal: number | string): Node | null => {
   if (!node.children.length) {
     if (node.value === goal) return node;
