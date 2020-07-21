@@ -1,18 +1,20 @@
 # Backtracking
 
-In **backtacking**, we search for a solution by traversing a graph. If we reach a node with no children, and the current node is also not the item we're searching for, we "backtrack" to the parent or previous node.
+**Backtracking** is a recursive algorithm.
+
+In backtacking, we search for a solution by traversing a graph. If we reach a node with no children, and the current node is also not the item we're searching for, we "backtrack" to the parent or previous node.
 
 ## Examples
 
-### TypeScript
+### TypeScript Example Searching for a Node Within an n-ary Tree That Contains a Number Value
 
 ```ts
 type Node = {
-  value: number | string | null;
+  value: number | null;
   children: Node[] | null;
 };
 
-const backtrack = (node: Node, goal: number | string): Node | null => {
+const backtrack = (node: Node, goal: number): Node | null => {
   if (!node.children.length) {
     if (node.value === goal) return node;
     return null;
